@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ app_name }} | Learning Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+</head>
+<body>
+    <main class="container">
+        <header class="hero">
+            <div>
+                <p class="eyebrow">AI LEARNING ASSISTANT</p>
+                <h1>EduGenie</h1>
+                <p>Ask, understand, practice, summarize, and plan your learning journey.</p>
+            </div>
+        </header>
+
+        <section class="card">
+            <form id="edu-form">
+                <label for="task">Choose a task</label>
+                <select id="task" name="task">
+                    <option value="qa">Ask a Question</option>
+                    <option value="explain">Explain a Topic</option>
+                    <option value="quiz">Generate Quiz</option>
+                    <option value="summarize">Summarize</option>
+                    <option value="learn">Learning Path</option>
+                </select>
+
+                <label for="level" id="level-label">Learner level</label>
+                <select id="level" name="level">
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                </select>
+
+                <label for="input-text" id="input-label">Your question</label>
+                <textarea
+                    id="input-text"
+                    name="input-text"
+                    rows="9"
+                    placeholder="Example: What is photosynthesis?"
+                    required
+                ></textarea>
+
+                <div class="actions">
+                    <button type="submit" id="submit-button">Generate</button>
+                    <button type="button" id="clear-button" class="secondary">Clear</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="status" class="status hidden" aria-live="polite"></section>
+        <section id="result" class="card result hidden"></section>
+
+        <footer>
+            <span>EduGenie</span>
+            <span>FastAPI + Google Gemini</span>
+        </footer>
+    </main>
+
+    <script src="{{ url_for('static', path='app.js') }}"></script>
+</body>
+</html>

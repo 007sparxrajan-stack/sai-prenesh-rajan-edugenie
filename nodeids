@@ -1,0 +1,4 @@
+[
+  "tests/test_quiz_schema.py::test_invalid_correct_answer",
+  "tests/test_quiz_schema.py::test_valid_quiz_question"
+]
